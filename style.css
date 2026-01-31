@@ -36,14 +36,14 @@ nav {
     height: 10%;
 }
 
-main {
+.container-main {
     position: relative;
     height: 80vh;
     width: 100vw;
     background-color:#FAF8F5;
 }
 
-footer {
+.container-footer {
     position: relative;
     background-color: #333333;
     height: 10vh;
