@@ -43,13 +43,35 @@ nav {
     width: 80%;
     height: 10%;
 }
+
 main {
-    flex-grow: 1
+    flex-grow: 1;
 }
 .container-main {
+    display: grid;
     position: relative;
     width: 100%;
     background-color:#FAF8F5;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+    "banner banner"
+    "filter katalog"
+    "filter katalog"
+    "filter katalog"
+    "review review";
+}
+
+
+.hero-banner {
+    grid-area: banner;
+}
+
+.container-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
 }
 
 /* From Uiverse.io by alexruix */ 
@@ -128,4 +150,16 @@ main {
     background-color: #333333;
     height: 10vh;
     width: 100vw;
+}
+
+.detail-product {
+    grid-area: katalog;
+}
+
+.filter-content {
+    grid-area: filter;
+}
+
+.review-page {
+    grid-area: review;
 }
