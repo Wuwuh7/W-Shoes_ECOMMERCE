@@ -64,6 +64,7 @@ main {
 
 .hero-banner {
     grid-area: banner;
+    background-color: red;
 }
 
 .container-flex {
@@ -154,12 +155,36 @@ main {
 
 .detail-product {
     grid-area: katalog;
+    background-color: burlywood;
 }
 
 .filter-content {
     grid-area: filter;
+    background-color: khaki;
+}
+
+
+.container-filter {
+    display: flex;
+    justify-content: space-around;
+    align-items: right;
+    flex-direction: column;
+    gap: 2vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#filter-product {
+    text-align: center;
+    margin-top: 1.5vh;
+    margin-bottom: 3vh;
+}
+
+.filter-type {
+    font-weight: 900;
+    font-size: 1.05em;
 }
 
 .review-page {
     grid-area: review;
+    background-color: blue;
 }
