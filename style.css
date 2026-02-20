@@ -75,6 +75,20 @@ main {
     height: auto;
 }
 
+.title-katalog {
+    text-align: right;
+    font-weight: 900;
+    margin-top: 1.5vh;
+    margin-bottom: 3vh;
+}
+
+.container-grid {
+    display: grid;
+    gap: 10px 10px;
+    width: ;
+    height: ;
+}
+
 /* From Uiverse.io by alexruix */ 
 .card {
     width: 190px;
