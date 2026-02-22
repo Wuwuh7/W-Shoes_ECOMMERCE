@@ -137,6 +137,30 @@ let data_product = [
         price: 1050000,
         image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
         size: ["38", "39", "40"]
+    },
+    {
+        id: 18,
+        nama: "Under Armour-HOVR",
+        kategori: "Sport",
+        price: 1950000,
+        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+        size: ["40", "41", "42"]
+    },
+    {
+        id: 19,
+        nama: "Keen-Targhee",
+        kategori: "Mountain Style",
+        price: 2400000,
+        image: "asset/image-product/hiking-boot-svgrepo-com.svg",
+        size: ["41", "42", "43"]
+    },
+    {
+        id: 20,
+        nama: "Hush Puppies-Expert",
+        kategori: "Professional",
+        price: 1300000,
+        image: "asset/image-product/mans-shoe-svgrepo-com.svg",
+        size: ["39", "40", "41", "42"]
     }
 ];
 
@@ -144,8 +168,8 @@ function showProduct() {
     const templateCard = document.getElementById("card-katalog-template");
     const containerCard = document.querySelector(".container-grid");
 
-
     fetch_dummy(templateCard,containerCard);
+    filterProduct();
 
 }
 
