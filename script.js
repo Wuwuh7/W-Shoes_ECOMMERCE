@@ -163,6 +163,11 @@ let data_product = [
         size: ["39", "40", "41", "42"]
     }
 ];
+let link_banner = [
+    "asset/aset-banner/banner1.jpg",
+    "asset/aset-banner/banner2.jpg",
+    "asset/aset-banner/banner3.jpg"
+];
 
 function showProduct() {
     const templateCard = document.getElementById("card-katalog-template");
@@ -170,9 +175,17 @@ function showProduct() {
 
     fetch_dummy(templateCard,containerCard);
     filterProduct();
-
+    showCart();
 }
 
+function display_banner() {
+    const tamplateBanner = document.querySelector(".banner");
+    const containerBanner = document.querySelector(".slider");
+
+    cloneTamplate(tamplateBanner,containerBanner);
+    carouselSystem(containerBanner);
+}
+display_banner();
 showProduct();
 
 function fetch_dummy(template,container) {
@@ -195,3 +208,55 @@ function fetch_dummy(template,container) {
 
         container.appendChild(clone);
 })};
+
+function cloneTamplate(template,container) {
+    try {
+        link_banner.forEach(e => {
+            const clone = template.content.cloneNode(true);
+            const bannerImg = clone.querySelector(".imgBanner");
+    
+            bannerImg.src = `${e}`;
+            container.appendChild(clone);
+        });  
+    } catch (error) {
+        console.log(`${error}`);
+    }
+}
+
+function carouselSystem(slider) {
+    try {
+        const prev = document.getElementById("prev");
+        const next = document.getElementById("next");
+    
+        let currentIndex = 0;
+    
+        prev.addEventListener("click", () => {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = link_banner.length - 1;
+        }
+        updateSlider(currentIndex,slider);
+    });
+    
+        next.addEventListener("click", () => {
+            currentIndex++;
+            if (currentIndex >= link_banner.length) {
+                currentIndex = 0;
+    }
+    updateSlider(currentIndex,slider);
+});
+    
+    } catch (error) {
+        console.log(`${error}`);
+    }
+}
+
+function updateSlider(firstPage,slide) {
+    try {
+        const shift = (firstPage * -100)/link_banner.length;
+
+        slide.style.transform = `translateX(${shift}%)`;
+       } catch (error) {
+     console.log(`${error}`);   
+    }
+}
