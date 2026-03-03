@@ -173,9 +173,8 @@ function showProduct() {
     const templateCard = document.getElementById("card-katalog-template");
     const containerCard = document.querySelector(".container-grid");
 
-    fetch_dummy(templateCard,containerCard);
-    filterProduct();
-    showCart();
+    renderProduct(templateCard,containerCard,data_product);
+    filterProduct(templateCard,containerCard);
 }
 
 function display_banner() {
@@ -188,8 +187,9 @@ function display_banner() {
 display_banner();
 showProduct();
 
-function fetch_dummy(template,container) {
-    data_product.forEach(element => {
+function renderProduct(template,container,product) {
+    container.innerHTML = "";
+    product.forEach(element => {
         const clone = template.content.cloneNode(true);
         const cardImg = clone.querySelector(".card-img");
         const titleProduct = clone.querySelector(".card-info .text-title");
@@ -259,4 +259,38 @@ function updateSlider(firstPage,slide) {
        } catch (error) {
      console.log(`${error}`);   
     }
+}
+
+function filterProduct(template,container) {
+    try {
+   const  kategoryCheckBox = document.querySelectorAll(".category-filter input[type='checkbox']");
+   const  priceCheckBox = document.querySelectorAll(".price-filter input[type='checkbox']");
+   const  sizeCheckBox = document.querySelectorAll(".size-filter input[type='checkbox']");
+
+   let filteredProduct;
+  
+   let handleKategories = () => {
+    let selectedKategori = [];
+    kategoryCheckBox.forEach(e => {
+            if (e.checked) {
+                selectedKategori.push(e.value);
+            }
+         });
+         if (selectedKategori.length === 0) {
+            filteredProduct = data_product;
+        } else {
+            filteredProduct = data_product.filter(e => selectedKategori.includes(e.kategori));
+        }
+
+         renderProduct(template,container,filteredProduct);
+         };
+  
+    kategoryCheckBox.forEach(e => {
+        e.addEventListener("change", handleKategories);
+    });
+   
+    } catch (error) {
+        console.log(`${error}`);
+    }
+   
 }
