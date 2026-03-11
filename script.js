@@ -169,6 +169,27 @@ let link_banner = [
     "asset/aset-banner/banner3.jpg"
 ];
 
+let comments = [
+    {
+        id: 1,
+        nama: "Prabowo",
+        rating: 5,
+        comment: "Saya sangat senang dengan produk ini, terlebih sepatu gunung nya yang kuat untuk mendaki"
+    },
+    {
+        id: 2,
+        nama: "Gibran",
+        rating: 4,
+        comment: "Sepatu sportnya nyaman banget buat lari pagi. Desainnya juga keren!"
+    },
+    {
+        id: 3,
+        nama: "Jokowi",
+        rating: 5,
+        comment: "Kualitas sepatu professionalnya tidak diragukan lagi. Terlihat sangat premium dan kokoh. Pengiriman juga cepat."
+    }
+];
+
 function showProduct() {
     const templateCard = document.getElementById("card-katalog-template");
     const containerCard = document.querySelector(".container-grid");
@@ -178,17 +199,6 @@ function showProduct() {
     filterPriceProduct(templateCard,containerCard);
     filterSizeProduct(templateCard,containerCard);
 }
-
-function display_banner() {
-    const tamplateBanner = document.querySelector(".banner");
-    const containerBanner = document.querySelector(".slider");
-
-    cloneTamplate(tamplateBanner,containerBanner);
-    carouselSystem(containerBanner);
-}
-display_banner();
-showProduct();
-
 function renderProduct(template,container,product) {
     container.innerHTML = "";
     product.forEach(element => {
@@ -209,59 +219,7 @@ function renderProduct(template,container,product) {
         priceProduct.textContent = `Rp. ${element.price.toLocaleString()}`;
 
         container.appendChild(clone);
-})};
-
-function cloneTamplate(template,container) {
-    try {
-        link_banner.forEach(e => {
-            const clone = template.content.cloneNode(true);
-            const bannerImg = clone.querySelector(".imgBanner");
-    
-            bannerImg.src = `${e}`;
-            container.appendChild(clone);
-        });  
-    } catch (error) {
-        console.log(`${error}`);
-    }
-}
-
-function carouselSystem(slider) {
-    try {
-        const prev = document.getElementById("prev");
-        const next = document.getElementById("next");
-    
-        let currentIndex = 0;
-    
-        prev.addEventListener("click", () => {
-            currentIndex--;
-            if (currentIndex < 0) {
-                currentIndex = link_banner.length - 1;
-        }
-        updateSlider(currentIndex,slider);
-    });
-    
-        next.addEventListener("click", () => {
-            currentIndex++;
-            if (currentIndex >= link_banner.length) {
-                currentIndex = 0;
-    }
-    updateSlider(currentIndex,slider);
-});
-    
-    } catch (error) {
-        console.log(`${error}`);
-    }
-}
-
-function updateSlider(firstPage,slide) {
-    try {
-        const shift = (firstPage * -100)/link_banner.length;
-
-        slide.style.transform = `translateX(${shift}%)`;
-       } catch (error) {
-     console.log(`${error}`);   
-    }
-}
+})}
 
 function filterCategoryProduct(template,container) {
     try {
@@ -379,18 +337,99 @@ function filterSizeProduct(template,container) {
     });
 }
 
+function display_banner() {
+    const tamplateBanner = document.querySelector(".banner");
+    const containerBanner = document.querySelector(".slider");
+
+    cloneTamplate(tamplateBanner,containerBanner);
+    carouselSystem(containerBanner);
+}
+display_banner();
+showProduct();
+
+function cloneTamplate(template,container) {
+    try {
+        link_banner.forEach(e => {
+            const clone = template.content.cloneNode(true);
+            const bannerImg = clone.querySelector(".imgBanner");
+    
+            bannerImg.src = `${e}`;
+            container.appendChild(clone);
+        });  
+    } catch (error) {
+        console.log(`${error}`);
+    }
+}
+
+function carouselSystem(slider) {
+    try {
+        const prev = document.getElementById("prev");
+        const next = document.getElementById("next");
+    
+        let currentIndex = 0;
+    
+        prev.addEventListener("click", () => {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = link_banner.length - 1;
+        }
+        updateSlider(currentIndex,slider);
+    });
+    
+        next.addEventListener("click", () => {
+            currentIndex++;
+            if (currentIndex >= link_banner.length) {
+                currentIndex = 0;
+    }
+    updateSlider(currentIndex,slider);
+});
+    
+    } catch (error) {
+        console.log(`${error}`);
+    }
+}
+
+function updateSlider(firstPage,slide) {
+    try {
+        const shift = (firstPage * -100)/link_banner.length;
+        slide.style.transform = `translateX(${shift}%)`;
+       } catch (error) {
+     console.log(`${error}`);   
+    }
+}
+
+
+
 function reviewPages() {
     const template = document.getElementById("review-card");
-    const container = document.querySelector(".review-container");
+    const container = document.querySelector(".slider-review");
+
 
     renderReview(template,container,comments)
-    automateCarousel(template,container);
 }
+
+reviewPages();
 
 function renderReview(template,container,comments) {
-    
+    try {
+        comments.forEach(e => {
+            const clone = template.content.cloneNode(true);
+            const review_title = clone.querySelector(".card__title");
+            const review_rating = clone.querySelector(".rating-stars");
+            const review_descr = clone.querySelector(".card__descr");
+
+            review_descr.textContent = e.comment;
+            review_title.textContent = e.nama;
+
+            const ratingValue = e.rating;
+            const starsString ='⭐'.repeat(ratingValue);
+            review_rating.textContent = starsString;
+
+            container.appendChild(clone);
+        });
+            
+    } catch (error) {
+        console.log(`${error}`);
+    }
 }
 
-function automateCarousel(template,container) {
-
-}
