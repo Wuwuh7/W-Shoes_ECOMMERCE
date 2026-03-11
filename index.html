@@ -5,9 +5,8 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<header>
-			<div class="header-container">
-				<img src="/asset/shoes-removebg-preview.png" id="logo" alt="logo" width="100rem" height="100rem">
+		<header class="header-container">
+				<img src="asset/shoes-removebg-preview.png" id="logo" alt="logo" >
 				<nav>
 					<div class="container-navbar">
 						<input type="search" id="searching" >
@@ -23,43 +22,70 @@
 						</svg></a>
 					</div>
 				</nav>
-			</div>
 		</header>
 		<main>
 			<div class="container-main">
 				<section class="hero-banner">
 					<div class="container-flex">
-						<img class="banner" src="#" alt="banner">
-						<img class="banner" src="#" alt="banner1">
-						<img class="banner" src="#" alt="banner2">
-						<img class="banner src="#" alt="banner3">
-						<img class="banner src="#" alt="banner4">
+						<div class="slider">
+							<template class ="banner">	
+							<img class="imgBanner" src ="" alt="" >
+							</template>
+						</div>
+						<button id="prev">❮</button>
+						<button id="next">❯</button>
 					</div>
 				</section>
+				<aside class="filter-content">
+					<form class="container-filter" method="GET">
+						<h2 id="filter-product">FILTER-PRODUCT</h2>
+						<div class="category-filter">
+							<p class="filter-type">KATEGORI</p>
+							<div class="box-choices">
+								<input type="checkbox" name="kategori" value="Mountain Style" id="sepatu-gunung">
+								<label for="sepatu-gunung">MOUNTAIN STYLE</label>
+								<input type="checkbox" name="kategori" value="Professional" id="sepatu-profesional">
+								<label for="sepatu-profesional">PROFESIONAL</label>
+								<input type="checkbox" name="kategori" value="Sport" id="sepatu-sports">
+								<label for="sepatu-sports">SPORTS</label>
+							</div>
+						</div>
+						<div class="size-filter">
+							<p class="filter-type">SIZE</p>
+							<div class="box-choices">
+								<input type="checkbox" name="size" value="Low-size" id="Low-size">
+								<label for="Low-size">36-38</label>
+								<input type="checkbox" name="size" value="Mid-size" id="Mid-size">
+								<label for="Mid-size">39-41</label>
+								<input type="checkbox" name="size" value="High-size" id="High-size">
+								<label for="High-size">42-44</label>	
+							</div>
+						</div>
+						<div class="price-filter">
+							<p class="filter-type">PRICE</p>
+							<div class="box-choices">
+								<input type="checkbox" name="price" value="minimum" id="minimum">
+								<label for="minimum">&lt; 1jt</label>
+								<input type="checkbox" name="price" value="middle" id="mid-range">
+								<label for="mid-range">1jt - 2jt</label>
+								<input type="checkbox" name="price" value="maximum" id="maksimum">
+								<label for="maksimum">&gt; 2jt</label>
+							</div>
+						</div>
+					</form>
+				</aside>
 				<section class="detail-product">
-					<aside class="filter-content">
-						<form class="container-filter" method="GET">
-							<div class="category-filter">
-								
-							</div>
-							<div class="size-filter">
-								
-							</div>
-							<div class="price-filter">
-								
-							</div>
-						</form>
-					</aside>
+					<h2 class="title-katalog">KATALOG PRODUCT</h2>					
 					<div class="container-grid">
 						<template id="card-katalog-template">
 							<div class="card">
 							<div class="card-img"></div>
 							<div class="card-info">
-							  <p class="text-title">Product title </p>
-							  <p class="text-body">Product description and details</p>
+							  <p class="text-title"></p>
+							  <p class="text-body"></p>
 							</div>
 							<div class="card-footer">
-							<span class="text-title">$499.49</span>
+							<span class="text-title"></span>
 							<div class="card-button">
 							  <svg class="svg-icon" viewBox="0 0 20 20">
 								<path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
@@ -73,13 +99,25 @@
 					</div>
 				</section>
 				<section class="review-page">
-					<div container-flex>
-						<a href="#"><img src="/asset/aset-icon/profile-circle-svgrepo-com (1).svg" class="icon"></a>
-						<h3></h3>
-						<div class="container-rating">
-							
-						</div>
-						<p></p>
+					<div class="container-review">
+						<div class="slider-review">
+							<template id="review-card">
+								<div class="container-rating">
+									<div class="card-rating">
+									  <div class="card__img"><a href="#"><img src="/asset/aset-icon/profile-circle-svgrepo-com (1).svg" class="icon"></a></div>
+									  <div class="card__descr-wrapper">
+										<p class="card__title">
+											
+									  </p>
+									 <div class="rating-stars"></div>	
+									  <p class="card__descr">
+									
+									</p>
+									  </div>
+									</div>
+								</div>
+							</template>	
+						</div>					
 					</div>
 				</section>
 			</div>
