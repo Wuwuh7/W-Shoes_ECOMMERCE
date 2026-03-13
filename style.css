@@ -329,7 +329,7 @@ main {
     gap: 2em;
     padding: 1em 0;
     width: 300%; 
-    transition: transform 0.5s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
 
 .container-rating {
