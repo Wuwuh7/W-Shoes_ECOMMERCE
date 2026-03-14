@@ -1,5 +1,5 @@
 
-const detail_product = document.querySelector(".detail-product");
+import FuzzySearch from "fuzzy-search";
 
 let data_product = [
     {
@@ -195,9 +195,12 @@ function showProduct() {
     const containerCard = document.querySelector(".container-grid");
 
     renderProduct(templateCard,containerCard,data_product);
+
     filterCategoryProduct(templateCard,containerCard);
     filterPriceProduct(templateCard,containerCard);
     filterSizeProduct(templateCard,containerCard);
+
+    searchEngine(templateCard,containerCard);
 }
 function renderProduct(template,container,product) {
     container.innerHTML = "";
@@ -459,3 +462,23 @@ function automateCarousel(slider) {
         observer.observe(sectionReview);
 }
 
+function searchEngine(template,container) {
+    const searching = document.querySelector("input[type='search']");
+
+    let checkingWords = new FuzzySearch(data_product, ["nama"]
+        ,{
+            caseSensitive : false
+        }
+    );
+
+    searching.addEventListener("input", (s) => {
+        let valueSearch = s.target.value;
+        let result = checkingWords.search(valueSearch);
+
+        if (valueSearch.length === 0) {
+            renderProduct(template,container,data_product);
+            return;
+        }
+        renderProduct(template,container,result);
+    });
+}
