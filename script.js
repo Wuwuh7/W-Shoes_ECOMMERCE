@@ -1,5 +1,5 @@
 
-const detail_product = document.querySelector(".detail-product");
+import FuzzySearch from "fuzzy-search";
 
 let data_product = [
     {
@@ -195,9 +195,12 @@ function showProduct() {
     const containerCard = document.querySelector(".container-grid");
 
     renderProduct(templateCard,containerCard,data_product);
+
     filterCategoryProduct(templateCard,containerCard);
     filterPriceProduct(templateCard,containerCard);
     filterSizeProduct(templateCard,containerCard);
+
+    searchEngine(templateCard,containerCard);
 }
 function renderProduct(template,container,product) {
     container.innerHTML = "";
@@ -405,13 +408,13 @@ function reviewPages() {
     const container = document.querySelector(".slider-review");
 
 
-    renderReview(template,container,comments)
+    renderReview(template,container,comments);
+    automateCarousel(container);
 }
 
 reviewPages();
 
 function renderReview(template,container,comments) {
-    try {
         comments.forEach(e => {
             const clone = template.content.cloneNode(true);
             const review_title = clone.querySelector(".card__title");
@@ -427,9 +430,62 @@ function renderReview(template,container,comments) {
 
             container.appendChild(clone);
         });
-            
-    } catch (error) {
-        console.log(`${error}`);
-    }
 }
 
+function automateCarousel(slider) {
+   
+        const cardReview = slider.querySelectorAll(".card-rating"); 
+        const sectionReview = document.querySelector(".review-page");
+
+        let currentIndex = 0;
+        let intervalID = null;
+        const options = {
+            threshold : 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+
+            if (entry.isIntersecting) {
+                intervalID = setInterval(() => {
+                    currentIndex++;
+                    if (currentIndex >= cardReview.length) {
+                        currentIndex = 0;
+                    }
+                    const calculating = currentIndex * (100/cardReview.length);
+                    slider.style.transform = `translateX(-${calculating}%)`;
+                },3000);
+            } else {
+                clearInterval(intervalID);              
+            }
+        },options);
+        observer.observe(sectionReview);
+}
+
+function searchEngine(template,container) {
+    const searching = document.querySelector("input[type ='search']");
+
+    let checkingWords = new FuzzySearch(data_product, ["nama"]
+        ,{
+            caseSensitive : false
+        }
+    );
+
+    searching.addEventListener("input", (s) => {
+        let valueSearch = s.target.value;
+        let result = checkingWords.search(valueSearch);
+
+        if (valueSearch.length === 0) {
+            renderProduct(template,container,data_product);
+            return;
+        }
+        renderProduct(template,container,result);
+    });
+}
+
+function cart_product() {
+    const template = querySelector(".cart-template");
+    const container = querySelector(".container-cart");
+
+    renderCart(template,container,data_product);
+}
