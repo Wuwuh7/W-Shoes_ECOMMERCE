@@ -463,7 +463,7 @@ function automateCarousel(slider) {
 }
 
 function searchEngine(template,container) {
-    const searching = document.querySelector("input[type='search']");
+    const searching = document.querySelector("input[type ='search']");
 
     let checkingWords = new FuzzySearch(data_product, ["nama"]
         ,{
@@ -481,4 +481,11 @@ function searchEngine(template,container) {
         }
         renderProduct(template,container,result);
     });
+}
+
+function cart_product() {
+    const template = querySelector(".cart-template");
+    const container = querySelector(".container-cart");
+
+    renderCart(template,container,data_product);
 }
