@@ -210,6 +210,7 @@ function renderProduct(template,container,product) {
         const titleProduct = clone.querySelector(".card-info .text-title");
         const bodyProduct = clone.querySelector(".text-body");
         const priceProduct = clone.querySelector(".card-footer .text-title");
+        const buttonCart = clone.querySelector(".card-button");
 
         cardImg.style.backgroundImage = `url(${element.image})`;
         cardImg.style.backgroundSize = "cover";
@@ -223,6 +224,8 @@ function renderProduct(template,container,product) {
 
         container.appendChild(clone);
 })}
+
+handleEventCart();
 
 function filterCategoryProduct(template,container) {
     try {
@@ -483,9 +486,30 @@ function searchEngine(template,container) {
     });
 }
 
-function cart_product() {
+function handleEventCart() {
     const template = querySelector(".cart-template");
     const container = querySelector(".container-cart");
 
     renderCart(template,container,data_product);
+}
+
+
+function renderCart(cardTemplate,container,product) {
+    product.forEach(e => {
+        const cloneCart = cardTemplate.content.cloneNode(true);
+        const selectedCard = cloneCart.querySelector(".product-target input['type = checkbox']");
+        let productInfo = {
+            image: cloneCart.querySelector(".icon-product"),
+            name: cloneCart.querySelector(".name"),
+            description: cloneCart.querySelector('.description'),
+            price: cloneCart.querySelector('.product-price')
+        };
+
+        productInfo[image].style.backgroundImage = `url(${e.image})`; 
+        productInfo[name].textContent = e.nama;
+        productInfo[description].textContent = `${e.kategori},${e.size}`;
+        productInfo[price].textContent = `Rp.${e.price.toLocaleString()}`;
+
+        container.appendChild(cloneCart);
+    });
 }

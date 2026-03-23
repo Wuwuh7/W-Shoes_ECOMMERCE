@@ -27,7 +27,7 @@ header {
     width: 100%;
     height: 20vh;
     background-color: #333333;
-    padding: 1.5em 4em;
+    padding: 1.5em 0 1.5em 4em;
 }
 
 #logo {
@@ -89,21 +89,27 @@ nav a:hover .icon {
   ::placeholder {
     color: #abb2bf;
   }
+  .cart {
+    position: absolute;
+    left: 60vw;
+    top: 20vh;
+  }
 
   .container-cart {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 360px;
+    width: 40vw;
     height: fit-content;
   }
+
  .cart-title {
     font-weight: 900;
     font-size: 1.2em;
     text-align: center;
     width : 100%;
     height: 60px;
-    background-color: #2c1010;
+    background-color: white;
  }
 
 .list-cart {
@@ -115,12 +121,26 @@ nav a:hover .icon {
     background-color: snow;
     grid-template-areas: 
     "selected . . .",
-    "icon icon info info",
+    "img img info info",
+    "img img info quantiti",
     "delete delete delete delete";
+}
+
+.product-target {
+    grid-area: selected;
+}
+
+.icon-product {
+    grid-area: img;
+}
+
+.info-product {
+    grid-area: info;
 }
 
 .quantity {
     display: flex;
+    grid-area: quantiti;
     align-items: center;
     border: 1px solid #e0e0e0;
     border-radius: 20px;
@@ -146,7 +166,11 @@ nav a:hover .icon {
  .footer-cart {
     width: 100%;
     height: 100px;
-    background-color: #2c1010;
+    background-color: blue;
+ }
+
+ .delete-product {
+    grid-area: delete;
  }
 
 main {

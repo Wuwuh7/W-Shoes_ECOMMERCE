@@ -26,42 +26,44 @@
 							<path d="M840.3 197.8H381c-16.6 0-30 13.4-30 30s13.4 30 30 30h459.3c30.2 0 54.9 24.3 55.5 54.3l-19.9 226.5-0.1 1.3v1.3c0 30.6-24.9 55.5-55.5 55.5H436c-16.6 0-30 13.4-30 30s13.4 30 30 30h384.3c63.2 0 114.7-51.1 115.5-114.1L955.7 316l0.1-1.3v-1.3c0-63.8-51.8-115.6-115.5-115.6z" fill="#D2691E" />
 							<path d="M408.5 842.1c7.2 0 13.1 5.9 13.1 13.1s-5.9 13.1-13.1 13.1-13.1-5.9-13.1-13.1 5.9-13.1 13.1-13.1m0-60c-40.4 0-73.1 32.7-73.1 73.1s32.7 73.1 73.1 73.1 73.1-32.7 73.1-73.1-32.7-73.1-73.1-73.1zM823.1 842.1c7.2 0 13.1 5.9 13.1 13.1s-5.9 13.1-13.1 13.1-13.1-5.9-13.1-13.1 5.9-13.1 13.1-13.1m0-60c-40.4 0-73.1 32.7-73.1 73.1s32.7 73.1 73.1 73.1 73.1-32.7 73.1-73.1-32.7-73.1-73.1-73.1z" fill="#D2691E" />
 						</svg></a>
-						<template class="cart-template">
-							<div class="container-cart">
-								<h2 class="cart-title"></h2>
-								<div class="list-cart">
-									<input type="checkbox" class="product-target">
-									<div class="icon-product"></div>
-									<div class="info-product">
-										<h4 class="name"></h4>
-										<p class="description"></p>
-										<span class="product-price"></span>
-									</div>
-									<button id ="delete-product">x</button>
-									<div class ="quantity">
-										<button id="minus">
-										  <svg fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
-											<path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#47484b" d="M20 12L4 12"></path>
-										  </svg>
-										</button>
-										<label id="demand">2</label>
-										<button id="plus">
-										  <svg fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
-											<path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#47484b" d="M12 4V20M20 12H4"></path>
-										  </svg>
-										</button>
-									  </div>
-								</div>
-								<div class="footer-cart">
-									<p class="total-price"></p>
-									<input type="checkbox" id="all-select">
-									<label for="all-select">ALL</label>
-									<button id="buy-product"><a href="#">checkout</a></button>
-								</div>
-							</div>
-						</template>
 					</div>
 				</nav>
+				<div class="cart">
+					<div class="container-cart">
+					 <h2 class="cart-title"></h2>
+					<template class="cart-template">
+						<div class="list-cart">
+							<input type="checkbox" class="product-target">
+							<div class="icon-product"></div>
+							<div class="info-product">
+								<h4 class="name"></h4>
+								<p class="description"></p>
+								<span class="product-price"></span>
+							</div>
+							<div class ="quantity">
+								<button id="minus">
+								  <svg fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+									<path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#47484b" d="M20 12L4 12"></path>
+								  </svg>
+								</button>
+								<label id="demand">2</label>
+								<button id="plus">
+								  <svg fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+									<path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#47484b" d="M12 4V20M20 12H4"></path>
+								  </svg>
+								</button>
+							  </div>
+						</div>
+						<button id ="delete-product">x</button>
+				</template>
+				<div class="footer-cart">
+					<p class="total-price"></p>
+					<input type="checkbox" id="all-select">
+					<label for="all-select">ALL</label>
+					<button id="buy-product"><a href="#">checkout</a></button>
+					</div>
+				</div>
+			</div>
 		</header>
 		<main>
 			<div class="container-main">
