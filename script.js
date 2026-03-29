@@ -1,515 +1,583 @@
-
 import FuzzySearch from "fuzzy-search";
 
 let data_product = [
-    {
-        id: 1,
-        nama: "Ardiles-10 pro",
-        kategori: "Sport",
-        price: 1500000,
-        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
-        size: ["39", "40", "41", "42", "43"]
-    },
-    {
-        id: 2,
-        nama: "Eiger-Raptor",
-        kategori: "Mountain Style",
-        price: 2500000,
-        image: "asset/image-product/hiking-boot-svgrepo-com.svg",
-        size: ["42", "43", "44"]
-    },
-    {
-        id: 3,
-        nama: "Nike-Air Max",
-        kategori: "Sport",
-        price: 1800000,
-        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
-        size: ["38", "39", "40", "41", "42"]
-    },
-    {
-        id: 4,
-        nama: "Adidas-Predator",
-        kategori: "Sport",
-        price: 2200000,
-        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
-        size: ["42", "43", "44"]
-    },
-    {
-        id: 5,
-        nama: "Reebok-Nano",
-        kategori: "Sport",
-        price: 1600000,
-        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
-        size: ["38", "39", "40"]
-    },
-    {
-        id: 6,
-        nama: "New Balance-Fresh Foam",
-        kategori: "Sport",
-        price: 1750000,
-        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
-        size: ["41", "42", "43", "44"]
-    },
-    {
-        id: 7,
-        nama: "Converse-Chuck Taylor",
-        kategori: "Sport",
-        price: 850000,
-        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
-        size: ["38", "39", "40", "41"]
-    },
-    {
-        id: 8,
-        nama: "Vans-Old Skool",
-        kategori: "Sport",
-        price: 950000,
-        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
-        size: ["38", "39", "40", "41"]
-    },
-    {
-        id: 9,
-        nama: "Puma-Suede",
-        kategori: "Sport",
-        price: 1100000,
-        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
-        size: ["38", "39", "40", "41"]
-    },
-    {
-        id: 10,
-        nama: "Asics-Gel-Kayano",
-        kategori: "Sport",
-        price: 1900000,
-        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
-        size: ["40", "41", "42", "43", "44"]
-    },
-    {
-        id: 11,
-        nama: "Salomon-Speedcross",
-        kategori: "Mountain Style",
-        price: 2800000,
-        image: "asset/image-product/hiking-boot-svgrepo-com.svg",
-        size: ["42", "43", "44"]
-    },
-    {
-        id: 12,
-        nama: "Merrell-Moab",
-        kategori: "Mountain Style",
-        price: 2650000,
-        image: "asset/image-product/hiking-boot-svgrepo-com.svg",
-        size: ["41", "42", "43"]
-    },
-    {
-        id: 13,
-        nama: "La Sportiva-Tarantulace",
-        kategori: "Mountain Style",
-        price: 3100000,
-        image: "asset/image-product/hiking-boot-svgrepo-com.svg",
-        size: ["39", "40", "41"]
-    },
-    {
-        id: 14,
-        nama: "Bata-Professional",
-        kategori: "Professional",
-        price: 750000,
-        image: "asset/image-product/mans-shoe-svgrepo-com.svg",
-        size: ["39", "40", "41", "42", "43"]
-    },
-    {
-        id: 15,
-        nama: "Clarks-Desert Boot",
-        kategori: "Professional",
-        price: 1600000,
-        image: "asset/image-product/mans-shoe-svgrepo-com.svg",
-        size: ["38", "39", "40"]
-    },
-    {
-        id: 16,
-        nama: "Dr. Martens-1460",
-        kategori: "Professional",
-        price: 2100000,
-        image: "asset/image-product/mans-shoe-svgrepo-com.svg",
-        size: ["38", "39", "40", "41", "42"]
-    },
-    {
-        id: 17,
-        nama: "Fila-Disruptor",
-        kategori: "Sport",
-        price: 1050000,
-        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
-        size: ["39", "40", "41"]
-    },
-    {
-        id: 18,
-        nama: "Under Armour-HOVR",
-        kategori: "Sport",
-        price: 1950000,
-        image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
-        size: ["42", "43", "44"]
-    },
-    {
-        id: 19,
-        nama: "Keen-Targhee",
-        kategori: "Mountain Style",
-        price: 2400000,
-        image: "asset/image-product/hiking-boot-svgrepo-com.svg",
-        size: ["42", "43", "44"]
-    },
-    {
-        id: 20,
-        nama: "Hush Puppies-Expert",
-        kategori: "Professional",
-        price: 1300000,
-        image: "asset/image-product/mans-shoe-svgrepo-com.svg",
-        size: ["39", "40", "41", "42"]
-    }
+  {
+    id: 1,
+    nama: "Ardiles-10 pro",
+    kategori: "Sport",
+    price: 1500000,
+    image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+    size: ["39", "40", "41", "42", "43"],
+  },
+  {
+    id: 2,
+    nama: "Eiger-Raptor",
+    kategori: "Mountain Style",
+    price: 2500000,
+    image: "asset/image-product/hiking-boot-svgrepo-com.svg",
+    size: ["42", "43", "44"],
+  },
+  {
+    id: 3,
+    nama: "Nike-Air Max",
+    kategori: "Sport",
+    price: 1800000,
+    image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+    size: ["38", "39", "40", "41", "42"],
+  },
+  {
+    id: 4,
+    nama: "Adidas-Predator",
+    kategori: "Sport",
+    price: 2200000,
+    image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+    size: ["42", "43", "44"],
+  },
+  {
+    id: 5,
+    nama: "Reebok-Nano",
+    kategori: "Sport",
+    price: 1600000,
+    image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+    size: ["38", "39", "40"],
+  },
+  {
+    id: 6,
+    nama: "New Balance-Fresh Foam",
+    kategori: "Sport",
+    price: 1750000,
+    image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+    size: ["41", "42", "43", "44"],
+  },
+  {
+    id: 7,
+    nama: "Converse-Chuck Taylor",
+    kategori: "Sport",
+    price: 850000,
+    image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+    size: ["38", "39", "40", "41"],
+  },
+  {
+    id: 8,
+    nama: "Vans-Old Skool",
+    kategori: "Sport",
+    price: 950000,
+    image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+    size: ["38", "39", "40", "41"],
+  },
+  {
+    id: 9,
+    nama: "Puma-Suede",
+    kategori: "Sport",
+    price: 1100000,
+    image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+    size: ["38", "39", "40", "41"],
+  },
+  {
+    id: 10,
+    nama: "Asics-Gel-Kayano",
+    kategori: "Sport",
+    price: 1900000,
+    image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+    size: ["40", "41", "42", "43", "44"],
+  },
+  {
+    id: 11,
+    nama: "Salomon-Speedcross",
+    kategori: "Mountain Style",
+    price: 2800000,
+    image: "asset/image-product/hiking-boot-svgrepo-com.svg",
+    size: ["42", "43", "44"],
+  },
+  {
+    id: 12,
+    nama: "Merrell-Moab",
+    kategori: "Mountain Style",
+    price: 2650000,
+    image: "asset/image-product/hiking-boot-svgrepo-com.svg",
+    size: ["41", "42", "43"],
+  },
+  {
+    id: 13,
+    nama: "La Sportiva-Tarantulace",
+    kategori: "Mountain Style",
+    price: 3100000,
+    image: "asset/image-product/hiking-boot-svgrepo-com.svg",
+    size: ["39", "40", "41"],
+  },
+  {
+    id: 14,
+    nama: "Bata-Professional",
+    kategori: "Professional",
+    price: 750000,
+    image: "asset/image-product/mans-shoe-svgrepo-com.svg",
+    size: ["39", "40", "41", "42", "43"],
+  },
+  {
+    id: 15,
+    nama: "Clarks-Desert Boot",
+    kategori: "Professional",
+    price: 1600000,
+    image: "asset/image-product/mans-shoe-svgrepo-com.svg",
+    size: ["38", "39", "40"],
+  },
+  {
+    id: 16,
+    nama: "Dr. Martens-1460",
+    kategori: "Professional",
+    price: 2100000,
+    image: "asset/image-product/mans-shoe-svgrepo-com.svg",
+    size: ["38", "39", "40", "41", "42"],
+  },
+  {
+    id: 17,
+    nama: "Fila-Disruptor",
+    kategori: "Sport",
+    price: 1050000,
+    image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+    size: ["39", "40", "41"],
+  },
+  {
+    id: 18,
+    nama: "Under Armour-HOVR",
+    kategori: "Sport",
+    price: 1950000,
+    image: "asset/image-product/footwear-soccer-svgrepo-com.svg",
+    size: ["42", "43", "44"],
+  },
+  {
+    id: 19,
+    nama: "Keen-Targhee",
+    kategori: "Mountain Style",
+    price: 2400000,
+    image: "asset/image-product/hiking-boot-svgrepo-com.svg",
+    size: ["42", "43", "44"],
+  },
+  {
+    id: 20,
+    nama: "Hush Puppies-Expert",
+    kategori: "Professional",
+    price: 1300000,
+    image: "asset/image-product/mans-shoe-svgrepo-com.svg",
+    size: ["39", "40", "41", "42"],
+  },
 ];
 let link_banner = [
-    "asset/aset-banner/banner1.jpg",
-    "asset/aset-banner/banner2.jpg",
-    "asset/aset-banner/banner3.jpg"
+  "asset/aset-banner/banner1.jpg",
+  "asset/aset-banner/banner2.jpg",
+  "asset/aset-banner/banner3.jpg",
 ];
 
 let comments = [
-    {
-        id: 1,
-        nama: "Prabowo",
-        rating: 5,
-        comment: "Saya sangat senang dengan produk ini, terlebih sepatu gunung nya yang kuat untuk mendaki"
-    },
-    {
-        id: 2,
-        nama: "Gibran",
-        rating: 4,
-        comment: "Sepatu sportnya nyaman banget buat lari pagi. Desainnya juga keren!"
-    },
-    {
-        id: 3,
-        nama: "Jokowi",
-        rating: 5,
-        comment: "Kualitas sepatu professionalnya tidak diragukan lagi. Terlihat sangat premium dan kokoh. Pengiriman juga cepat."
-    }
+  {
+    id: 1,
+    nama: "Prabowo",
+    rating: 5,
+    comment:
+      "Saya sangat senang dengan produk ini, terlebih sepatu gunung nya yang kuat untuk mendaki",
+  },
+  {
+    id: 2,
+    nama: "Gibran",
+    rating: 4,
+    comment:
+      "Sepatu sportnya nyaman banget buat lari pagi. Desainnya juga keren!",
+  },
+  {
+    id: 3,
+    nama: "Jokowi",
+    rating: 5,
+    comment:
+      "Kualitas sepatu professionalnya tidak diragukan lagi. Terlihat sangat premium dan kokoh. Pengiriman juga cepat.",
+  },
 ];
 
 function showProduct() {
-    const templateCard = document.getElementById("card-katalog-template");
-    const containerCard = document.querySelector(".container-grid");
+  const templateCard = document.getElementById("card-katalog-template");
+  const containerCard = document.querySelector(".container-grid");
 
-    renderProduct(templateCard,containerCard,data_product);
+  renderProduct(templateCard, containerCard, data_product);
 
-    filterCategoryProduct(templateCard,containerCard);
-    filterPriceProduct(templateCard,containerCard);
-    filterSizeProduct(templateCard,containerCard);
+  filterCategoryProduct(templateCard, containerCard);
+  filterPriceProduct(templateCard, containerCard);
+  filterSizeProduct(templateCard, containerCard);
 
-    searchEngine(templateCard,containerCard);
+  searchEngine(templateCard, containerCard);
 }
-function renderProduct(template,container,product) {
-    container.innerHTML = "";
-    product.forEach(element => {
-        const clone = template.content.cloneNode(true);
-        const cardImg = clone.querySelector(".card-img");
-        const titleProduct = clone.querySelector(".card-info .text-title");
-        const bodyProduct = clone.querySelector(".text-body");
-        const priceProduct = clone.querySelector(".card-footer .text-title");
-        const buttonCart = clone.querySelector(".card-button");
+function renderProduct(template, container, product) {
+  container.innerHTML = "";
+  product.forEach((element) => {
+    const clone = template.content.cloneNode(true);
+    const cardImg = clone.querySelector(".card-img");
+    const titleProduct = clone.querySelector(".card-info .text-title");
+    const bodyProduct = clone.querySelector(".text-body");
+    const priceProduct = clone.querySelector(".card-footer .text-title");
+    const buttonCart = clone.querySelector(".card-button");
 
-        cardImg.style.backgroundImage = `url(${element.image})`;
-        cardImg.style.backgroundSize = "cover";
-        cardImg.style.backgroundPosition = "center";
-        cardImg.style.backgroundRepeat = "no-repeat";
-        
+    cardImg.style.backgroundImage = `url(${element.image})`;
+    cardImg.style.backgroundSize = "cover";
+    cardImg.style.backgroundPosition = "center";
+    cardImg.style.backgroundRepeat = "no-repeat";
 
-        titleProduct.textContent = element.nama;
-        bodyProduct.textContent = element.kategori;
-        priceProduct.textContent = `Rp. ${element.price.toLocaleString()}`;
+    titleProduct.textContent = element.nama;
+    bodyProduct.textContent = element.kategori;
+    priceProduct.textContent = `Rp. ${element.price.toLocaleString()}`;
 
-        container.appendChild(clone);
-})}
-
-handleEventCart();
-
-function filterCategoryProduct(template,container) {
-    try {
-   const  kategoryCheckBox = document.querySelectorAll(".category-filter input[type='checkbox']");
-   let filteredProduct;
-  
-   let handleKategories = () => {
-    let selectedKategori = [];
-    kategoryCheckBox.forEach(e => {
-            if (e.checked) {
-                selectedKategori.push(e.value);
-            }
-         });
-         if (selectedKategori.length === 0) {
-            filteredProduct = data_product;
-        } else {
-            filteredProduct = data_product.filter(e => selectedKategori.includes(e.kategori));
-        }
-         renderProduct(template,container,filteredProduct);
-         };
-  
-    kategoryCheckBox.forEach(e => {
-        e.addEventListener("change", handleKategories);
+    buttonCart.addEventListener("click", () => {
+      handleEventCart(element.id);
     });
-   
-    } catch (error) {
-        console.log(`${error}`);
-    }
+    container.appendChild(clone);
+  });
+}
+
+function filterCategoryProduct(template, container) {
+  try {
+    const kategoryCheckBox = document.querySelectorAll(
+      ".category-filter input[type='checkbox']"
+    );
+    let filteredProduct;
+
+    let handleKategories = () => {
+      let selectedKategori = [];
+      kategoryCheckBox.forEach((e) => {
+        if (e.checked) {
+          selectedKategori.push(e.value);
+        }
+      });
+      if (selectedKategori.length === 0) {
+        filteredProduct = data_product;
+      } else {
+        filteredProduct = data_product.filter((e) =>
+          selectedKategori.includes(e.kategori)
+        );
+      }
+      renderProduct(template, container, filteredProduct);
+    };
+
+    kategoryCheckBox.forEach((e) => {
+      e.addEventListener("change", handleKategories);
+    });
+  } catch (error) {
+    console.log(`${error}`);
+  }
 }
 
 function filterPriceProduct(template, container) {
-    const priceCheckBox = document.querySelectorAll(".price-filter input[type='checkbox']");
-    let filteredProduct;
-    let minimumPrice = 1000000;
-    let maksimumPrice = 2000000;
+  const priceCheckBox = document.querySelectorAll(
+    ".price-filter input[type='checkbox']"
+  );
+  let filteredProduct;
+  let minimumPrice = 1000000;
+  let maksimumPrice = 2000000;
 
-    let handlePrice = () => {
-        let selectedPrice = [];
-        priceCheckBox.forEach(e => {
-            if (e.checked) {
-                selectedPrice.push(e.value);
-            }
-        });
-
-        if (selectedPrice.length === 0) {
-            filteredProduct = data_product;
-        } else {
-            filteredProduct = data_product.filter(product => {
-               return selectedPrice.some(selection => {
-                    switch (selection) {
-                        case 'minimum':
-                            return product.price < minimumPrice;
-                        case 'middle':
-                            return product.price >= minimumPrice && product.price <= maksimumPrice;
-                        case 'maximum':
-                            return product.price > maksimumPrice;
-                        default:
-                            return false;
-                    }
-                });
-            });
-        }
-        renderProduct(template, container, filteredProduct);
-    };
-
-    priceCheckBox.forEach(e => {
-        e.addEventListener("change", handlePrice);
+  let handlePrice = () => {
+    let selectedPrice = [];
+    priceCheckBox.forEach((e) => {
+      if (e.checked) {
+        selectedPrice.push(e.value);
+      }
     });
+
+    if (selectedPrice.length === 0) {
+      filteredProduct = data_product;
+    } else {
+      filteredProduct = data_product.filter((product) => {
+        return selectedPrice.some((selection) => {
+          switch (selection) {
+            case "minimum":
+              return product.price < minimumPrice;
+            case "middle":
+              return (
+                product.price >= minimumPrice && product.price <= maksimumPrice
+              );
+            case "maximum":
+              return product.price > maksimumPrice;
+            default:
+              return false;
+          }
+        });
+      });
+    }
+    renderProduct(template, container, filteredProduct);
+  };
+
+  priceCheckBox.forEach((e) => {
+    e.addEventListener("change", handlePrice);
+  });
 }
 
-function filterSizeProduct(template,container) {
-    const  sizeCheckBox = document.querySelectorAll(".size-filter input[type='checkbox']");
-    let filteredProduct;
-    let lowSize = [36,37,38];
-    let midSize = [39,40,41];
-    let highSize = [42,43,44];
-    
-    let handleSize = () => {
-        let selectedSize = [];
-        sizeCheckBox.forEach(e => {
-            if (e.checked) {
-                selectedSize.push(e.value);
-            }
-        });
+function filterSizeProduct(template, container) {
+  const sizeCheckBox = document.querySelectorAll(
+    ".size-filter input[type='checkbox']"
+  );
+  let filteredProduct;
+  let lowSize = [36, 37, 38];
+  let midSize = [39, 40, 41];
+  let highSize = [42, 43, 44];
 
-        if (selectedSize.length === 0) {
-            filteredProduct = data_product;
-        } else {
-            filteredProduct = data_product.filter(product => {
-              return selectedSize.some(selection => {
-                    let targetSizeRange;
-                    switch (selection) {
-                        case 'Low-size':
-                            targetSizeRange = lowSize;
-                            break;
-                        case 'Mid-size':
-                            targetSizeRange = midSize;
-                            break;
-                        case 'High-size':
-                            targetSizeRange = highSize;
-                            break;
-                        default:
-                            return false;
-                        }
-
-                 return product.size.some(size => targetSizeRange.includes(Number(size)));
-                });
-            });
-        }
-        renderProduct(template,container,filteredProduct);
-    };
-
-    sizeCheckBox.forEach(e => {
-        e.addEventListener("change", handleSize);
+  let handleSize = () => {
+    let selectedSize = [];
+    sizeCheckBox.forEach((e) => {
+      if (e.checked) {
+        selectedSize.push(e.value);
+      }
     });
+
+    if (selectedSize.length === 0) {
+      filteredProduct = data_product;
+    } else {
+      filteredProduct = data_product.filter((product) => {
+        return selectedSize.some((selection) => {
+          let targetSizeRange;
+          switch (selection) {
+            case "Low-size":
+              targetSizeRange = lowSize;
+              break;
+            case "Mid-size":
+              targetSizeRange = midSize;
+              break;
+            case "High-size":
+              targetSizeRange = highSize;
+              break;
+            default:
+              return false;
+          }
+
+          return product.size.some((size) =>
+            targetSizeRange.includes(Number(size))
+          );
+        });
+      });
+    }
+    renderProduct(template, container, filteredProduct);
+  };
+
+  sizeCheckBox.forEach((e) => {
+    e.addEventListener("change", handleSize);
+  });
 }
 
 function display_banner() {
-    const tamplateBanner = document.querySelector(".banner");
-    const containerBanner = document.querySelector(".slider");
+  const tamplateBanner = document.querySelector(".banner");
+  const containerBanner = document.querySelector(".slider");
 
-    cloneTamplate(tamplateBanner,containerBanner);
-    carouselSystem(containerBanner);
+  cloneTamplate(tamplateBanner, containerBanner);
+  carouselSystem(containerBanner);
 }
 display_banner();
 showProduct();
 
-function cloneTamplate(template,container) {
-    try {
-        link_banner.forEach(e => {
-            const clone = template.content.cloneNode(true);
-            const bannerImg = clone.querySelector(".imgBanner");
-    
-            bannerImg.src = `${e}`;
-            container.appendChild(clone);
-        });  
-    } catch (error) {
-        console.log(`${error}`);
-    }
+function cloneTamplate(template, container) {
+  try {
+    link_banner.forEach((e) => {
+      const clone = template.content.cloneNode(true);
+      const bannerImg = clone.querySelector(".imgBanner");
+
+      bannerImg.src = `${e}`;
+      container.appendChild(clone);
+    });
+  } catch (error) {
+    console.log(`${error}`);
+  }
 }
 
 function carouselSystem(slider) {
-    try {
-        const prev = document.getElementById("prev");
-        const next = document.getElementById("next");
-    
-        let currentIndex = 0;
-    
-        prev.addEventListener("click", () => {
-            currentIndex--;
-            if (currentIndex < 0) {
-                currentIndex = link_banner.length - 1;
-        }
-        updateSlider(currentIndex,slider);
+  try {
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+
+    let currentIndex = 0;
+
+    prev.addEventListener("click", () => {
+      currentIndex--;
+      if (currentIndex < 0) {
+        currentIndex = link_banner.length - 1;
+      }
+      updateSlider(currentIndex, slider);
     });
-    
-        next.addEventListener("click", () => {
-            currentIndex++;
-            if (currentIndex >= link_banner.length) {
-                currentIndex = 0;
-    }
-    updateSlider(currentIndex,slider);
-});
-    
-    } catch (error) {
-        console.log(`${error}`);
-    }
+
+    next.addEventListener("click", () => {
+      currentIndex++;
+      if (currentIndex >= link_banner.length) {
+        currentIndex = 0;
+      }
+      updateSlider(currentIndex, slider);
+    });
+  } catch (error) {
+    console.log(`${error}`);
+  }
 }
 
-function updateSlider(firstPage,slide) {
-    try {
-        const shift = (firstPage * -100)/link_banner.length;
-        slide.style.transform = `translateX(${shift}%)`;
-       } catch (error) {
-     console.log(`${error}`);   
-    }
+function updateSlider(firstPage, slide) {
+  try {
+    const shift = (firstPage * -100) / link_banner.length;
+    slide.style.transform = `translateX(${shift}%)`;
+  } catch (error) {
+    console.log(`${error}`);
+  }
 }
-
-
 
 function reviewPages() {
-    const template = document.getElementById("review-card");
-    const container = document.querySelector(".slider-review");
+  const template = document.getElementById("review-card");
+  const container = document.querySelector(".slider-review");
 
-
-    renderReview(template,container,comments);
-    automateCarousel(container);
+  renderReview(template, container, comments);
+  automateCarousel(container);
 }
 
 reviewPages();
 
-function renderReview(template,container,comments) {
-        comments.forEach(e => {
-            const clone = template.content.cloneNode(true);
-            const review_title = clone.querySelector(".card__title");
-            const review_rating = clone.querySelector(".rating-stars");
-            const review_descr = clone.querySelector(".card__descr");
+function renderReview(template, container, comments) {
+  comments.forEach((e) => {
+    const clone = template.content.cloneNode(true);
+    const review_title = clone.querySelector(".card__title");
+    const review_rating = clone.querySelector(".rating-stars");
+    const review_descr = clone.querySelector(".card__descr");
 
-            review_descr.textContent = e.comment;
-            review_title.textContent = e.nama;
+    review_descr.textContent = e.comment;
+    review_title.textContent = e.nama;
 
-            const ratingValue = e.rating;
-            const starsString ='⭐'.repeat(ratingValue);
-            review_rating.textContent = starsString;
+    const ratingValue = e.rating;
+    const starsString = "⭐".repeat(ratingValue);
+    review_rating.textContent = starsString;
 
-            container.appendChild(clone);
-        });
+    container.appendChild(clone);
+  });
 }
 
 function automateCarousel(slider) {
-   
-        const cardReview = slider.querySelectorAll(".card-rating"); 
-        const sectionReview = document.querySelector(".review-page");
+  const cardReview = slider.querySelectorAll(".card-rating");
+  const sectionReview = document.querySelector(".review-page");
 
-        let currentIndex = 0;
-        let intervalID = null;
-        const options = {
-            threshold : 0.5
-        };
+  let currentIndex = 0;
+  let intervalID = null;
+  const options = {
+    threshold: 0.5,
+  };
 
-        const observer = new IntersectionObserver((entries) => {
-            const entry = entries[0];
+  const observer = new IntersectionObserver((entries) => {
+    const entry = entries[0];
 
-            if (entry.isIntersecting) {
-                intervalID = setInterval(() => {
-                    currentIndex++;
-                    if (currentIndex >= cardReview.length) {
-                        currentIndex = 0;
-                    }
-                    const calculating = currentIndex * (100/cardReview.length);
-                    slider.style.transform = `translateX(-${calculating}%)`;
-                },3000);
-            } else {
-                clearInterval(intervalID);              
-            }
-        },options);
-        observer.observe(sectionReview);
-}
-
-function searchEngine(template,container) {
-    const searching = document.querySelector("input[type ='search']");
-
-    let checkingWords = new FuzzySearch(data_product, ["nama"]
-        ,{
-            caseSensitive : false
+    if (entry.isIntersecting) {
+      intervalID = setInterval(() => {
+        currentIndex++;
+        if (currentIndex >= cardReview.length) {
+          currentIndex = 0;
         }
-    );
-
-    searching.addEventListener("input", (s) => {
-        let valueSearch = s.target.value;
-        let result = checkingWords.search(valueSearch);
-
-        if (valueSearch.length === 0) {
-            renderProduct(template,container,data_product);
-            return;
-        }
-        renderProduct(template,container,result);
-    });
+        const calculating = currentIndex * (100 / cardReview.length);
+        slider.style.transform = `translateX(-${calculating}%)`;
+      }, 3000);
+    } else {
+      clearInterval(intervalID);
+    }
+  }, options);
+  observer.observe(sectionReview);
 }
 
-function handleEventCart() {
-    const template = querySelector(".cart-template");
-    const container = querySelector(".container-cart");
+function searchEngine(template, container) {
+  const searching = document.querySelector("input[type ='search']");
 
-    renderCart(template,container,data_product);
+  let checkingWords = new FuzzySearch(data_product, ["nama"], {
+    caseSensitive: false,
+  });
+
+  searching.addEventListener("input", (s) => {
+    let valueSearch = s.target.value;
+    let result = checkingWords.search(valueSearch);
+
+    if (valueSearch.length === 0) {
+      renderProduct(template, container, data_product);
+      return;
+    }
+    renderProduct(template, container, result);
+  });
 }
 
+let cart = [];
+function handleEventCart(idSelect) {
+  const container = document.querySelector(".list-cart");
 
-function renderCart(cardTemplate,container,product) {
-    product.forEach(e => {
-        const cloneCart = cardTemplate.content.cloneNode(true);
-        const selectedCard = cloneCart.querySelector(".product-target input['type = checkbox']");
-        let productInfo = {
-            image: cloneCart.querySelector(".icon-product"),
-            name: cloneCart.querySelector(".name"),
-            description: cloneCart.querySelector('.description'),
-            price: cloneCart.querySelector('.product-price')
-        };
-
-        productInfo[image].style.backgroundImage = `url(${e.image})`; 
-        productInfo[name].textContent = e.nama;
-        productInfo[description].textContent = `${e.kategori},${e.size}`;
-        productInfo[price].textContent = `Rp.${e.price.toLocaleString()}`;
-
-        container.appendChild(cloneCart);
+  let product;
+  if (cart.some((data) => data.id === idSelect)) {
+    alert("WIS ANA BARANGE WOYYYYYY!!!!");
+  } else {
+    product = data_product.find((data) => data.id === idSelect);
+    cart.push({
+      ...product,
+      recentStockProduct: 1,
     });
+  }
+  updateCart(container, cart, product);
+  console.log(cart);
+}
+
+function updateCart(containerCart, setUpCart, selectedProduk) {
+  renderCart(containerCart, setUpCart);
+  //subTotalCart(setUpCart,selectedProduk);
+}
+
+function renderCart(container, product) {
+  let titleCart = document.querySelector(".cart-title");
+  container.innerHTML = "";
+  product.forEach((e) => {
+    container.innerHTML += `
+       <div class="container-list-cart">
+        <input type="checkbox" class="product-target">
+        <img src="${e.image}" alt="${e.nama}" class="icon-product">
+        <div class="info-product">
+            <h4 class="name">${e.nama}</h4>
+            <p class="description">${e.kategori},${e.size}</p>
+            <span class="product-price">Rp.${e.price.toLocaleString()}</span>
+        </div>
+        <div class ="quantity">
+            <button class="operator-kuantitas" value='minus' data-id="${e.id}">
+              <svg fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#47484b" d="M20 12L4 12"></path>
+              </svg>
+            </button>
+            <label class="demand">${e.recentStockProduct}</label>
+            <button class="operator-kuantitas" value='plus' data-id="${e.id}">
+              <svg fill="none" viewBox="0 0 24 24" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#47484b" d="M12 4V20M20 12H4"></path>
+              </svg>
+            </button>
+          </div>
+    </div>
+<button id ="delete-product">x</button>`;
+  });
+  titleCart.innerHTML = "";
+  titleCart.textContent = `My cart ${product.length}`;
+
+  const selectButton = container.querySelectorAll(".operator-kuantitas");
+  console.log("Value of selectButton:", selectButton);
+  selectButton.forEach((b) => {
+    b.addEventListener("click", (butt) => {
+      let buttonValue = butt.target.closest(".operator-kuantitas").value;
+      let itemId = butt.target.closest(".operator-kuantitas").dataset.id;
+      console.log(buttonValue);
+      operateQuantity(buttonValue, itemId, container);
+    });
+  });
+}
+
+function operateQuantity(event, data, container) {
+  cart = cart.map((item) => {
+    let recentStock = item.recentStockProduct;
+
+    if (item.id == data) {
+      switch (event) {
+        case "minus":
+          if (recentStock > 1) recentStock--;
+          break;
+        case "plus":
+          recentStock++;
+          break;
+      }
+    }
+    return {
+      ...item,
+      recentStockProduct: recentStock,
+    };
+  });
+  renderCart(container, cart);
 }
