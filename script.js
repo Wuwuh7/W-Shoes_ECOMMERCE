@@ -507,13 +507,8 @@ function handleEventCart(idSelect) {
       recentStockProduct: 1,
     });
   }
-  updateCart(container, cart, product);
+  renderCart(container, cart);
   console.log(cart);
-}
-
-function updateCart(containerCart, setUpCart, selectedProduk) {
-  renderCart(containerCart, setUpCart);
-  //subTotalCart(setUpCart,selectedProduk);
 }
 
 function renderCart(container, product) {
@@ -522,7 +517,7 @@ function renderCart(container, product) {
   product.forEach((e) => {
     container.innerHTML += `
        <div class="container-list-cart">
-        <input type="checkbox" class="product-target">
+        <input type="checkbox" class="target-produk" value='choosen' data-id="${e.id}">
         <img src="${e.image}" alt="${e.nama}" class="icon-product">
         <div class="info-product">
             <h4 class="name">${e.nama}</h4>
@@ -558,8 +553,9 @@ function renderCart(container, product) {
       operateQuantity(buttonValue, itemId, container);
     });
   });
-}
 
+  subTotalCart();
+}
 function operateQuantity(event, data, container) {
   cart = cart.map((item) => {
     let recentStock = item.recentStockProduct;
@@ -580,4 +576,13 @@ function operateQuantity(event, data, container) {
     };
   });
   renderCart(container, cart);
+}
+
+function subTotalCart() {
+  const totalPriceCart = document.querySelector(".footer-cart .total-price");
+
+  let operateSUM = cart.reduce((result, e) => {
+    return result + e.price * e.recentStockProduct;
+  }, 0);
+  totalPriceCart.textContent = `Rp.${operateSUM.toLocaleString()}`;
 }

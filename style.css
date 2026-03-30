@@ -266,8 +266,7 @@ nav a:hover .icon {
   text-transform: uppercase;
 }
 
-.footer-cart .total-price::after {
-  content: "Rp 150.000";
+.footer-cart .total-price {
   font-size: 1.4rem;
   font-weight: 700;
   color: #4a4a4a;
