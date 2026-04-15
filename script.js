@@ -493,7 +493,21 @@ function searchEngine(template, container) {
   });
 }
 
+const toggleCart = document.querySelector(".icon");
 let cart = [];
+let setup_cart = () => {
+  const displayCart = document.querySelector(".container-cart");
+
+  let isDisplay = "none";
+  if (isDisplay === displayCart.style.display) {
+    displayCart.style.display = "flex";
+  } else {
+    displayCart.style.display = "none";
+  }
+};
+
+toggleCart.addEventListener("click", setup_cart);
+
 function handleEventCart(idSelect) {
   const container = document.querySelector(".list-cart");
 

@@ -92,12 +92,12 @@ nav a:hover .icon {
 .cart {
   position: absolute;
   right: 25px;
-  top: 25px;
+  top: 95px;
   z-index: 1000;
 }
 
 .container-cart {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 360px;
   max-height: 80vh;
