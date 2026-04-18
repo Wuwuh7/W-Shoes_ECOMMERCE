@@ -493,7 +493,7 @@ function searchEngine(template, container) {
   });
 }
 
-const toggleCart = document.querySelector(".icon");
+const toggleCart = document.querySelector(".icon-link");
 let cart = [];
 let setup_cart = () => {
   const displayCart = document.querySelector(".container-cart");

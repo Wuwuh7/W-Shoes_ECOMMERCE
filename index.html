@@ -30,12 +30,12 @@
             placeholder="Search For Products"
           />
         </div>
-        <a href="#"
-          ><svg
+        <div href="#" class="icon-link">
+          <svg
             width="3rem"
             height="3rem"
             viewBox="0 0 1024 1024"
-            class="icon"
+            class="icon-svg"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -64,8 +64,9 @@
             <path
               d="M408.5 842.1c7.2 0 13.1 5.9 13.1 13.1s-5.9 13.1-13.1 13.1-13.1-5.9-13.1-13.1 5.9-13.1 13.1-13.1m0-60c-40.4 0-73.1 32.7-73.1 73.1s32.7 73.1 73.1 73.1 73.1-32.7 73.1-73.1-32.7-73.1-73.1-73.1zM823.1 842.1c7.2 0 13.1 5.9 13.1 13.1s-5.9 13.1-13.1 13.1-13.1-5.9-13.1-13.1 5.9-13.1 13.1-13.1m0-60c-40.4 0-73.1 32.7-73.1 73.1s32.7 73.1 73.1 73.1 73.1-32.7 73.1-73.1-32.7-73.1-73.1-73.1z"
               fill="#D2691E"
-            /></svg
-        ></a>
+            />
+          </svg>
+        </div>
       </div>
     </nav>
     <div class="cart">
@@ -83,7 +84,7 @@
   </header>
   <main>
     <div class="container-main">
-      <section class="hero-banner">
+      <section id="hero-banner" class="hero-banner">
         <div class="container-flex">
           <div class="slider">
             <template class="banner">
@@ -177,7 +178,7 @@
           </div>
         </form>
       </aside>
-      <section class="detail-product">
+      <section class="detail-product" id="detail-product">
         <h2 class="title-katalog">KATALOG PRODUCT</h2>
         <div class="container-grid">
           <template id="card-katalog-template">
@@ -207,7 +208,7 @@
           </template>
         </div>
       </section>
-      <section class="review-page">
+      <section class="review-page" id="review-page">
         <div class="container-review">
           <div class="slider-review">
             <template id="review-card">
@@ -235,27 +236,39 @@
   </main>
   <footer>
     <div class="container-footer">
-      <p id="gmail"></p>
-      <p id=""></p>
-      <a href="#"
-        ><img
-          src="/asset/aset-icon/github-142-svgrepo-com.svg"
-          class="icon"
-          alt="github"
-        />
-      </a>
-      <a href="#"
-        ><img
-          src="/asset/aset-icon/instagram-1-svgrepo-com.svg"
-          class="icon"
-          alt="instagram"
-      /></a>
-      <a href="#"
-        ><img
-          src="/asset/aset-icon/linkedin-icon-svgrepo-com.svg"
-          class="icon"
-          alt="linkedin"
-      /></a>
+      <div class="identity-author">
+        <h4 class="Identiti">Contact</h4>
+        <a id="gmail" href="#">grangermm311@gmail.com</a>
+        <p id="name">WUWUH BENU</p>
+      </div>
+      <div class="nav-page">
+        <h4 class="site">Site</h4>
+        <a class="list" href="#hero-banner">home</a>
+        <a class="list" href="#detail-product">katalog</a>
+        <a class="list" href="#review-page">review</a>
+      </div>
+      <div class="social-media-author">
+        <h4 class="social">Social</h4>
+        <a href="https://github.com/Wuwuh7"
+          ><img
+            src="/asset/aset-icon/github-142-svgrepo-com.svg"
+            class="icon"
+            alt="github"
+          />
+        </a>
+        <a href="https://www.instagram.com/wuh.keren/"
+          ><img
+            src="/asset/aset-icon/instagram-1-svgrepo-com.svg"
+            class="icon"
+            alt="instagram"
+        /></a>
+        <a href="#"
+          ><img
+            src="/asset/aset-icon/linkedin-icon-svgrepo-com.svg"
+            class="icon"
+            alt="linkedin"
+        /></a>
+      </div>
     </div>
   </footer>
   <script type="importmap">
