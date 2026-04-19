@@ -600,3 +600,34 @@ function subTotalCart() {
   }, 0);
   totalPriceCart.textContent = `Rp.${operateSUM.toLocaleString()}`;
 }
+
+function displayAllFilter() {
+  const addFilterButton = document.querySelector(".opened-filter");
+  const filterSideBar = document.querySelector(".filter-content");
+  animateAddingFilter(addFilterButton, filterSideBar);
+}
+
+function animateAddingFilter(button, sideBar) {
+  button.addEventListener("click", (butt) => {
+    sideBar.classList.toggle("display-filter");
+    button.classList.toggle("after-open");
+    let changeButton = () => {
+      button.innerHTML = "";
+      if (sideBar.classList.contains("display-filter")) {
+        button.innerHTML = "<<";
+      } else {
+        button.innerHTML = ">>";
+      }
+    };
+    return changeButton;
+  });
+}
+
+handlingErrorAnimate();
+function handlingErrorAnimate() {
+  try {
+    displayAllFilter();
+  } catch (error) {
+    console.log(error);
+  }
+}

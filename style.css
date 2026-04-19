@@ -414,8 +414,10 @@ main {
 
 .container-grid {
   display: grid;
+  height: 95%;
   gap: 40px 10px;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   margin-left: 2.5%;
   margin-bottom: 5%;
 }
@@ -423,6 +425,7 @@ main {
 /* From Uiverse.io by alexruix */
 .card {
   width: 250px;
+  min-height: 0;
   aspect-ratio: 190/254;
   padding: 0.8em;
   background: #f5f5f5;
@@ -502,8 +505,36 @@ main {
   grid-area: filter;
   background-color: #faf8f5;
   padding: 2em;
+  position: relative;
+  right: 200px;
+  transition: right 0.5s ease-in;
 }
 
+.display-filter {
+  right: 0 !important;
+}
+
+.opened-filter {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 30%;
+  transform: perspective(1.5px) rotateY(1deg);
+  width: 3vw;
+  height: 5vw;
+  font-size: larger;
+  font-weight: 900;
+  color: #4a5568;
+  background-color: #faf8f5;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: left 0.5s ease-in;
+}
+
+.after-open {
+  left: 190px !important;
+}
 .container-filter {
   display: flex;
   flex-direction: column;
@@ -670,7 +701,7 @@ main {
   text-decoration-color: rgb(255, 167, 4);
 }
 
-.nav-page > .list {
+.nav-page {
   display: flex;
   flex-direction: column;
   font-weight: 300;
@@ -680,8 +711,15 @@ main {
   transition: 0.3s ease-in-out;
 }
 
-.nav-page > .list:hover {
-  text-decoration: wavy;
+.nav-page > .list {
+  color: rgb(255, 171, 16);
+  text-decoration: none;
+  text-decoration-color: none;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-page > .list:hover::marker {
+  text-decoration: underline;
   text-decoration-color: rgb(255, 171, 16);
 }
 
