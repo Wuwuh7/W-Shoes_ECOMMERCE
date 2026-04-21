@@ -110,6 +110,11 @@ nav div:hover .icon-svg {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
   border: 1px solid rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  transition: display 1s ease-in-out;
+}
+
+.display-cart {
+  display: flex !important;
 }
 
 .cart-title {
@@ -182,9 +187,6 @@ nav div:hover .icon-svg {
 .quantity {
   grid-area: quantiti;
 }
-.delete-product {
-  grid-area: delete;
-}
 
 /* Styling Detail Teks */
 .name {
@@ -232,6 +234,7 @@ nav div:hover .icon-svg {
 
 /* Styling Delete Button */
 .delete-product {
+  grid-area: delete;
   background: none;
   border: none;
   color: #ced4da;
@@ -242,7 +245,6 @@ nav div:hover .icon-svg {
 
 .delete-product:hover {
   color: #ff4757;
-  text-decoration: underline;
 }
 
 /* --- 3. FOOTER (BAWAH) --- */
@@ -359,6 +361,7 @@ main {
 }
 
 .imgBanner {
+  padding: 3rem;
   width: 100%;
   height: 100%;
   object-fit: cover;

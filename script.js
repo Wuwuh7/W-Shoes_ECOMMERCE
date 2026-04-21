@@ -494,23 +494,14 @@ function searchEngine(template, container) {
 }
 
 const toggleCart = document.querySelector(".icon-link");
-let cart = [];
 let setup_cart = () => {
   const displayCart = document.querySelector(".container-cart");
-
-  let isDisplay = "none";
-  if (isDisplay === displayCart.style.display) {
-    displayCart.style.display = "flex";
-  } else {
-    displayCart.style.display = "none";
-  }
+  displayCart.classList.toggle("display-cart");
 };
 
 toggleCart.addEventListener("click", setup_cart);
-
+let cart = [];
 function handleEventCart(idSelect) {
-  const container = document.querySelector(".list-cart");
-
   let product;
   if (cart.some((data) => data.id === idSelect)) {
     alert("WIS ANA BARANGE WOYYYYYY!!!!");
@@ -521,13 +512,21 @@ function handleEventCart(idSelect) {
       recentStockProduct: 1,
     });
   }
+  updateCart();
+  console.log(typeof cart);
+}
+
+function updateCart() {
+  const container = document.querySelector(".list-cart");
+
   renderCart(container, cart);
-  console.log(cart);
+  subTotalCart();
 }
 
 function renderCart(container, product) {
   let titleCart = document.querySelector(".cart-title");
   container.innerHTML = "";
+  console.log("Type of product:", typeof product);
   product.forEach((e) => {
     container.innerHTML += `
        <div class="container-list-cart">
@@ -551,14 +550,13 @@ function renderCart(container, product) {
               </svg>
             </button>
           </div>
-    </div>
-<button id ="delete-product">x</button>`;
+        <button class="delete-product" value='delete' data-id="${e.id}">hapus barang</button>
+    </div>`;
   });
   titleCart.innerHTML = "";
   titleCart.textContent = `My cart ${product.length}`;
 
   const selectButton = container.querySelectorAll(".operator-kuantitas");
-  console.log("Value of selectButton:", selectButton);
   selectButton.forEach((b) => {
     b.addEventListener("click", (butt) => {
       let buttonValue = butt.target.closest(".operator-kuantitas").value;
@@ -566,9 +564,17 @@ function renderCart(container, product) {
       console.log(buttonValue);
       operateQuantity(buttonValue, itemId, container);
     });
-  });
 
-  subTotalCart();
+    const deleteButton = container.querySelectorAll(".delete-product");
+    deleteButton.forEach((deleted) => {
+      deleted.addEventListener("click", (d) => {
+        let valueDelete = d.target.closest(".delete-product").dataset.id;
+        console.log(typeof valueDelete);
+        let valueButton = d.target.closest(".delete-product").value;
+        deletedProductCart(valueDelete, valueButton);
+      });
+    });
+  });
 }
 function operateQuantity(event, data, container) {
   cart = cart.map((item) => {
@@ -590,6 +596,14 @@ function operateQuantity(event, data, container) {
     };
   });
   renderCart(container, cart);
+}
+
+function deletedProductCart(value, name) {
+  if (name === "delete") {
+    cart = cart.filter((item) => item.id !== +value);
+    console.log("kieh dihapus:" + cart);
+  }
+  updateCart();
 }
 
 function subTotalCart() {
