@@ -1,6 +1,7 @@
 @media (min-width: 321px) and (max-width: 480px) {
   html {
     scroll-behavior: smooth;
+    scrollbar-width: thin;
   }
   * {
     margin: 0;
@@ -355,7 +356,7 @@
   }
 
   .container-flex {
-    max-width: 90%;
+    max-width: 100vw;
     aspect-ratio: 3/1;
     position: relative;
     margin: 0;
@@ -397,13 +398,13 @@
     height: 40px;
   }
 
-  /* #prev {
-  left: 0;
-}
+  #prev {
+    left: 10px;
+  }
 
-#next {
-  right: 0;
-} */
+  #next {
+    right: 0;
+  }
 
   .container-flex:hover #prev,
   .container-flex:hover #next {
@@ -418,6 +419,7 @@
   .title-katalog {
     text-align: center;
     font-weight: 900;
+    max-width: 100vw;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 0;
@@ -425,6 +427,7 @@
 
   .container-grid {
     display: grid;
+    max-width: 100vw;
     grid-column-gap: 12px;
     grid-row-gap: 12px;
     padding: 10px;
@@ -475,7 +478,7 @@
   /*Text*/
   .text-title {
     font-weight: 900;
-    font-size: 0.9em;
+    font-size: 0.7em;
     line-height: 1.5;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -635,15 +638,14 @@
 
   .container-review {
     position: relative;
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    min-width: 120px;
     overflow: hidden;
   }
 
   .slider-review {
     display: flex;
-    gap: 2em;
     padding: 1em 0;
     width: 300%;
     transition: transform 1s ease-in-out;
@@ -658,7 +660,7 @@
     border: 1px solid #eaeaea;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    padding: 1.8em;
+    padding: 1em;
     font-family: "Georgia", serif;
     transition:
       transform 0.3s ease,
@@ -697,7 +699,8 @@
   }
 
   .card__descr {
-    font-size: 1em;
+    font-size: 0.75em;
+    overflow-wrap: break-word;
     line-height: 1.6;
     color: #555;
     font-style: italic;
