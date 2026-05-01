@@ -119,7 +119,7 @@
 
   .display-cart {
     max-width: 360px;
-    max-height: 80vh;
+    max-height: 30vh;
     display: flex !important;
   }
 
@@ -170,21 +170,21 @@
 
   .container-list-cart:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2.5px 7.5px rgba(0, 0, 0, 0.04);
   }
 
   .icon-product {
     grid-area: img;
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
     object-fit: cover;
   }
   .info-product {
     grid-area: info;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
   }
   .product-target {
     grid-area: selected;
@@ -197,16 +197,16 @@
   /* Styling Detail Teks */
   .name {
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.475rem;
     color: #2d3436;
     margin: 0;
   }
   .description {
-    font-size: 0.75rem;
+    font-size: 0.375rem;
     color: #95a5a6;
   }
   .product-price {
-    font-size: 0.9rem;
+    font-size: 0.45rem;
     font-weight: 800;
     color: #ff4757;
     margin-top: 5px;
@@ -217,8 +217,8 @@
     display: flex;
     align-items: center;
     background: #f1f2f6;
-    border-radius: 25px;
-    padding: 2px 8px;
+    border-radius: 12.5px;
+    padding: 1px 4px;
     width: fit-content;
   }
 
@@ -226,15 +226,15 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.1rem;
-    padding: 0 5px;
+    font-size: 0.55rem;
+    padding: 0 2.5px;
     color: #2f3542;
   }
 
   .quantity label {
-    font-size: 0.85rem;
+    font-size: 0.425rem;
     font-weight: 700;
-    min-width: 20px;
+    min-width: 10px;
     text-align: center;
   }
 
@@ -245,7 +245,7 @@
     border: none;
     color: #ced4da;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 0.4rem;
     transition: color 0.3s;
   }
 
@@ -256,14 +256,14 @@
   /* --- 3. FOOTER (BAWAH) --- */
   /* --- FOOTER CONTAINER --- */
   .footer-cart {
-    padding: 20px 25px;
+    padding: 10px 12.5px;
     background-color: #fdfdfd; /* Broken White biar gak silau */
     border-top: 1px solid #f1f1f1;
     display: grid;
     /* Kita bikin grid 3 kolom: Checkbox | Label ALL | Button */
     grid-template-columns: auto auto 1fr;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
   }
 
   .footer-cart .total-price {
@@ -271,15 +271,15 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 15px;
+    margin-bottom: 7.5px;
     color: #888;
-    font-size: 0.85rem;
+    font-size: 0.425rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
 
   .footer-cart .total-price {
-    font-size: 1.4rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: #4a4a4a;
     font-family: "Playfair Display", serif;
@@ -287,18 +287,18 @@
 
   /* --- CHECKBOX ALL SELECT --- */
   #all-select {
-    width: 18px;
-    height: 18px;
+    width: 9px;
+    height: 9px;
     cursor: pointer;
     accent-color: #c5a059; /* Aksen Gold Muted */
   }
 
   /* LABEL ALL */
   label[for="all-select"] {
-    font-size: 11px;
+    font-size: 5.5px;
     font-weight: 700;
     color: #aaa;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     cursor: pointer;
   }
 
@@ -306,7 +306,7 @@
     justify-self: end;
     background-color: #4a5568;
     border: none;
-    padding: 12px 30px;
+    padding: 6px 15px;
     border-radius: 50px;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: pointer;
@@ -528,35 +528,10 @@
     display: none;
   }
 
-  /* .display-filter {
-} */
-
-  /* .opened-filter {
-  position: absolute;
-  z-index: 2;
-  left: 0;
-  top: 30%;
-  transform: perspective(1.5px) rotateY(1deg);
-  width: 3vw;
-  height: 5vw;
-  font-size: larger;
-  font-weight: 900;
-  color: #4a5568;
-  background-color: #faf8f5;
-  box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.12),
-    0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: left 0.5s ease-in;
-}
-
-.after-open {
-  left: 190px !important;
-} */
   .container-filter {
     display: flex;
     height: 132px;
     max-width: 100vw;
-    /* justify-content:; */
     flex-direction: row;
     gap: 10vh 1vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -712,13 +687,12 @@
     height: auto;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .identity-author {
     font-weight: 300;
     color: rgb(255, 171, 16);
-    margin-right: -10vw;
   }
 
   .identity-author a {
