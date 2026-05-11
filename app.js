@@ -14,6 +14,10 @@ import {
 import { searchEngine } from "./logic/search.js";
 import { data_product, comments } from "./src/database.js";
 
+// function saveCart(item) {
+//   return localStorage.setItem("cart", JSON.stringify(item));
+// }
+
 function showProduct() {
   const templateCard = document.getElementById("card-katalog-template");
   const containerCard = document.querySelector(".container-grid");
@@ -34,6 +38,7 @@ function display_banner() {
   cloneTamplate(tamplateBanner, containerBanner);
   carouselSystem(containerBanner);
 }
+
 display_banner();
 showProduct();
 
@@ -43,7 +48,7 @@ function showCartPage() {
     const displayCart = document.querySelector(".container-cart");
     displayCart.classList.toggle("display-cart");
   };
-
+  // saveCart(cart);
   toggleCart.addEventListener("click", setup_cart);
 }
 showCartPage();

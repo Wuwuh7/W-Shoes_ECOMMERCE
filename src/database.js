@@ -189,9 +189,18 @@ let comments = [
       "Kualitas sepatu professionalnya tidak diragukan lagi. Terlihat sangat premium dan kokoh. Pengiriman juga cepat.",
   },
 ];
-let cart = [];
+
+let cart = loadCart();
+function loadCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
 function reuseCart(newCart) {
   cart = newCart;
 }
 
-export { data_product, link_banner, comments, cart, reuseCart };
+function saveStorage() {
+  return localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+export { data_product, link_banner, comments, cart, reuseCart, saveStorage };

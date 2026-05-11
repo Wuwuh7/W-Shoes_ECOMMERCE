@@ -1,8 +1,8 @@
-import { cart, reuseCart } from "../src/database.js";
+import { cart, reuseCart, saveStorage } from "../src/database.js";
 
 export function updateCart() {
   const container = document.querySelector(".list-cart");
-
+  saveStorage();
   renderCart(container, cart);
   subTotalCart();
 }
